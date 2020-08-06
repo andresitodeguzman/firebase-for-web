@@ -48,19 +48,10 @@ class App extends router(LitElement) {
         this.route = route;
         this.params = params;
         this.query = query;
-        console.log(route, params, query, data);
-    }
-
-    routing() {
-        return;        
     }
 
     render() {
         return html`
-        <app-link href="/">Home</app-link>
-        <app-link href="/login">Login</app-link>
-        <app-link href="/logout">Logout</app-link>
-    
         <router-outlet id="router-outlet" active-route=${this.route}>
             <page-home route='home'></page-home>
             <page-login route='login'></page-login>

@@ -4,9 +4,6 @@ import { outlet } from "lit-element-router";
 export class RouterOutlet extends outlet(LitElement) {
     static get properties() {
         return {
-            href: {
-                type: String
-            }
         };
     }
     
