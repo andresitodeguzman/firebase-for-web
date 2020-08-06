@@ -6,7 +6,8 @@ module.exports = ({ mode }) => {
         mode,
         plugins: [
             new HtmlWebpackPlugin({
-                template: './src/index.html'
+                template: './src/index.html',
+                minify: false
             }),
             new CopyPlugin({
                 patterns: [
@@ -16,7 +17,7 @@ module.exports = ({ mode }) => {
                         to: 'webcomponents'
                     }
                 ],
-            })
+            }),
         ],
         devtool: mode === 'development' ? 'source-map' : 'none'
     };

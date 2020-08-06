@@ -3,7 +3,7 @@ import { LitElement } from "lit-element";
 import { template } from './template';
 import { style } from './style';
 
-const componentTitle = 'home';
+const componentTitle = 'logout';
 
 export class PageComponent extends LitElement {
     static get properties() {

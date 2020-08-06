@@ -1,4 +1,4 @@
-import './app/my-app.js';
+import './app';
 
 window.addEventListener('load', () => {
     // Whatever

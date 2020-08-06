@@ -1,10 +1,15 @@
 import { LitElement, html } from 'lit-element';
 import { router } from 'lit-element-router';
 
+// import components
 import './components/app-link';
 import './components/router-outlet';
 
+// import pages
 import './pages/home';
+import './pages/login';
+import './pages/logout';
+import './pages/not-found';
 
 class App extends router(LitElement) {
     static get properties() {
@@ -21,11 +26,11 @@ class App extends router(LitElement) {
         pattern: '',
         data: { title: 'Home' }
         }, {
-        name: 'info',
-        pattern: 'info'
+        name: 'login',
+        pattern: 'login'
         }, {
-        name: 'user',
-        pattern: 'user/:id'
+        name: 'logout',
+        pattern: 'logout'
         }, {
         name: 'not-found',
         pattern: '*'
@@ -46,18 +51,21 @@ class App extends router(LitElement) {
         console.log(route, params, query, data);
     }
 
+    routing() {
+        return;        
+    }
+
     render() {
         return html`
         <app-link href="/">Home</app-link>
-        <app-link href="/info">Info</app-link>
-        <app-link href="/info?data=12345">Info?data=12345</app-link>
-        <app-link href="/user/14">user/14</app-link>
+        <app-link href="/login">Login</app-link>
+        <app-link href="/logout">Logout</app-link>
     
-        <router-outlet active-route=${this.route}>
-            <page-home route='home'>Home</page-home>
-            <h1 route='info'>Info ${this.query.data}</h1>
-            <h1 route='user'>User ${this.params.id} </h1>
-            <h1 route='not-found'>Not Found </h1>
+        <router-outlet id="router-outlet" active-route=${this.route}>
+            <page-home route='home'></page-home>
+            <page-login route='login'></page-login>
+            <page-logout route='logout'></page-logout>
+            <page-notfound route='not-found'></page-notfound>
         </router-outlet>
     `;
     }
