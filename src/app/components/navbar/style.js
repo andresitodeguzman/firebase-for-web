@@ -2,8 +2,10 @@ import { css } from 'lit-element';
 
 export const style = css`
     nav {
-        width: 100vw;
+        width: 100%;
         background-color: var(--primary-color);
+        position: fixed;
+        top: 0;
     }
 
     nav > div > div {

@@ -6,13 +6,16 @@ import { style } from './style';
 
 const componentTitle = 'navbar';
 
+import * as firebase from 'firebase/app';
+
 export class PageComponent extends navigator(LitElement) {
     static get properties() {
         return {
         };
     }
 
-    logout() {
+    async logout() {
+        await firebase.auth().signOut();
         this.navigate('/login');
     }
 

@@ -4,7 +4,7 @@ export const style = css`
     .container {
         margin-left: 5%;
         margin-right: 5%;
-        margin-top: 20px;
+        margin-top: 100px;
         padding-bottom: 150px;
     }
 
