@@ -26,12 +26,14 @@ class App extends router(LitElement) {
         name: 'home',
         pattern: '',
         data: { title: 'Home' }
-        },{
+        },
+        {
+            name: 'login',
+            pattern: 'login'
+            },
+            {
         name: 'add',
         pattern: 'add'
-        },{
-        name: 'login',
-        pattern: 'login'
         }, {
         name: 'logout',
         pattern: 'logout'
@@ -58,7 +60,7 @@ class App extends router(LitElement) {
         return html`
         <router-outlet active-route=${this.route}>
             <page-home route='home'></page-home>
-            <page-add route='add'></page-home>
+            <page-add route='add'></page-add>
             <page-login route='login'></page-login>
             <page-logout route='logout'></page-logout>
             <page-notfound route='not-found'></page-notfound>

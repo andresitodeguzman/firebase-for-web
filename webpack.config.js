@@ -19,6 +19,9 @@ module.exports = ({ mode }) => {
                 ],
             }),
         ],
+        devServer: {
+            historyApiFallback: true,
+        },
         devtool: mode === 'development' ? 'source-map' : 'none'
     };
 };
