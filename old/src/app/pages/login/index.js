@@ -3,7 +3,7 @@ import { LitElement } from "lit-element";
 import { template } from './template';
 import { style } from './style';
 
-const componentTitle = 'navbar';
+const componentTitle = 'login';
 
 export class PageComponent extends LitElement {
     static get properties() {
@@ -11,8 +11,8 @@ export class PageComponent extends LitElement {
         };
     }
 
-    static get styles() { return style; }    
+    static get styles() { return style; }
     render() { return template.bind(this)(); }
 }
 
-customElements.define(`app-${componentTitle}`, PageComponent);
+customElements.define(`page-${componentTitle}`, PageComponent);

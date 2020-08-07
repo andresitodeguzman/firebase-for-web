@@ -6,7 +6,7 @@ export const style = css`
         background-color: var(--primary-color);
     }
 
-    nav > div {
+    nav > div > div {
         padding: 20px;
         display: flex;
         flex-wrap: nowrap;

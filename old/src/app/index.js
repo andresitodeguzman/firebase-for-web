@@ -56,7 +56,7 @@ class App extends router(LitElement) {
 
     render() {
         return html`
-        <router-outlet id="router-outlet" active-route=${this.route}>
+        <router-outlet active-route=${this.route}>
             <page-home route='home'></page-home>
             <page-add route='add'></page-home>
             <page-login route='login'></page-login>
