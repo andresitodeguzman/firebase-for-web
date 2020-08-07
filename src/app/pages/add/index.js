@@ -7,7 +7,7 @@ import { style } from './style';
 import '../../components/navbar';
 import '../../components/app-card';
 
-const componentTitle = 'home';
+const componentTitle = 'add';
 
 export class PageComponent extends navigator(LitElement) {
     static get properties() {
@@ -17,12 +17,16 @@ export class PageComponent extends navigator(LitElement) {
 
     constructor() {
         super();
-        this.list = [{ name: 'abc', status:'done' },{ name: 'def', status:'done' }]
     }
 
-    addItem(event) {
-        event.preventDefault();
-        this.navigate('/add');
+    submit() {
+        const label = this.shadowRoot.querySelector('#label').value;
+        const merchant = this.shadowRoot.querySelector('#merchant').value;
+
+        this.shadowRoot.querySelector('#label').value = '';
+        this.shadowRoot.querySelector('#merchant').value = '';
+
+        alert(`Added ${label} from ${merchant}`);
     }
 
     static get styles() { return style; }    

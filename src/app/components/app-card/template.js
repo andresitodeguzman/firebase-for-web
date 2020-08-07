@@ -2,6 +2,10 @@ import { html } from 'lit-element';
 
 export function template() {
     return html`
-        <h1>Login</h1>
+    <div>
+        <div class="inner">
+            <slot></slot>
+        </div>
+    </div>
     `;
 }

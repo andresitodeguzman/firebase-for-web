@@ -10,6 +10,7 @@ import './pages/home';
 import './pages/login';
 import './pages/logout';
 import './pages/not-found';
+import './pages/add';
 
 class App extends router(LitElement) {
     static get properties() {
@@ -25,7 +26,10 @@ class App extends router(LitElement) {
         name: 'home',
         pattern: '',
         data: { title: 'Home' }
-        }, {
+        },{
+        name: 'add',
+        pattern: 'add'
+        },{
         name: 'login',
         pattern: 'login'
         }, {
@@ -54,6 +58,7 @@ class App extends router(LitElement) {
         return html`
         <router-outlet id="router-outlet" active-route=${this.route}>
             <page-home route='home'></page-home>
+            <page-add route='add'></page-home>
             <page-login route='login'></page-login>
             <page-logout route='logout'></page-logout>
             <page-notfound route='not-found'></page-notfound>

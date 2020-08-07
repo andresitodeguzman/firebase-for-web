@@ -1,5 +1,5 @@
 import './app';
 
 window.addEventListener('load', () => {
-    // Whatever
+    if(!localStorage.getItem('user') && window.location.pathname !== '/login') window.location.replace(['/login']);
 });
