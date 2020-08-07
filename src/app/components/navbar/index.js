@@ -19,7 +19,7 @@ export class PageComponent extends navigator(LitElement) {
         this.navigate('/login');
     }
 
-    static get styles() { return style; }    
+    static get styles() { return style; }
     render() { return template.bind(this)(); }
 }
 

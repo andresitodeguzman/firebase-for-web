@@ -4,21 +4,30 @@ export function template() {
     return html`
         <app-navbar></app-navbar>
         <div class="container">
-            <h1>In Transit</h1>
-            ${this.list.map(el => html`
-                <app-card>
-                    <h3>${el.name}</h3>
-                    <p>${el.status}</p>
-                </app-card>
-            `)}
+            <details @click="${this.getInTransit}">
+                <summary>
+                    <h1>In Transit</h1>
+                </summary>
+                ${this.list.map(el => html`
+                    <app-card>
+                        <h3>${el.label}</h3>
+                        <p>${el.merchant}</p>
+                    </app-card>
+                `)}
+            </details>
 
-            <h1 style="margin-top: 80px">Arrived</h1>
-            ${this.list.map(el => html`
+
+            <details style="margin-top: 80px">
+                <summary>
+                    <h1>Arrived</h1>
+                </summary>
+            ${this.arrived.map(el => html`
                 <app-card>
-                    <h3>${el.name}</h3>
-                    <p>${el.status}</p>
+                    <h3>${el.label}</h3>
+                    <p>${el.merchant}</p>
                 </app-card>
             `)}
+            </details>
 
         </div>
 

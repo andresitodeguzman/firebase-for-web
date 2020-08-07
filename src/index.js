@@ -1,9 +1,10 @@
 import './app';
 import * as f from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore';
 
 window.addEventListener('load', () => {
-    const firebase = f.initializeApp({
+    window.firebase = f.initializeApp({
         apiKey: "AIzaSyDXa742e7GB4hx7uLTdO0pTbPu4fB3Th2Y",
         authDomain: "sarap-app.firebaseapp.com",
         databaseURL: "https://sarap-app.firebaseio.com",
@@ -17,7 +18,8 @@ window.addEventListener('load', () => {
     firebase.auth().onAuthStateChanged(function(user) {
         if (!user && window.location.pathname !== '/login') {
           // User is signed in.
-          window.location.replace(['/login']);
+            window.location.replace(['/login']);
         }
     });
+
 });
